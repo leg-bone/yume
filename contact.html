@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YUME</title>
+   <link rel="icon" href="./img/lil.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background audio track -->
+  <audio autoplay loop id="bgAudio" style="display:none;" volume="0.5">
+    <source src="./sound/yumesound.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Background video with sound, behind everything -->
+  <video autoplay loop id="bgVideo" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-999;object-fit:cover;pointer-events:none;filter:saturate(0) sepia(0.6) hue-rotate(0deg) brightness(0.4) contrast(4);-webkit-filter:saturate(0) sepia(0.4) hue-rotate(0deg) brightness(.36) contrast(2);">
+    <source src="./img/yumebg1.mp4" type="video/mp4">
+  </video>
+
+
+    <nav class="menu-bar">
+    <nav class="menu-item">
+    <a href="home.html" class="menu-item">HOME</a>
+    </nav>
+     <nav class="menu-item">
+    <a href="work.html" class="menu-item">WORK</a>
+    </nav>
+    <nav class="menu-item">  
+    <a href="contact.html" class="menu-item">CONTACT</a>
+    </nav>
+      <button id="mute-btn" class="mute-control" aria-label="Mute/unmute background video">🔊</button>
+  </nav>
+
+ <video autoplay loop id="myVideo" style="filter:saturate(0) sepia(0.55) hue-rotate(60deg) brightness(2.0) contrast(1.15);-webkit-filter: sepia(.6) hue-rotate(-313deg) saturate(3) brightness(1.5) contrast(.9) blur(0.2px);">
+    <source src="./img/yumelogo1.mp4" type="video/mp4">
+  </video>
+
+<div class="bumper">  
+
+</div>
+<div class="bumper">  
+
+</div>
+<div class="bumper">  
+
+</div>
+
+<div class="bumper">  
+
+</div>
+
+</div>
+
+
+</div>
+   <div class="content-containerZ">
+      <p class="superA-text">
+       CONTACT: <a1>[ </a1><a class="superA-text"href="mailto:yumebrooklyn@gmail.com">YUMEBROOKLYN@GMAIL.COM</a><a1> ]</a1>
+      </p>
+     
+ 
+  </div>
+
+<div class="buffer-c">  
+
+</div>
+  <script>
+// Prevent video load errors from causing issues
+window.addEventListener('error', function(e) {
+  if (e.target.tagName === 'VIDEO' || e.target.tagName === 'IMG') {
+    console.warn('Failed to load:', e.target.src);
+  }
+}, true);
+
+// Mute button logic
+const bgVideo = document.getElementById('bgVideo');
+const bgAudio = document.getElementById('bgAudio');
+const muteBtn = document.getElementById('mute-btn');
+try { bgVideo.volume = 0.05; } catch (e) {}
+try { bgAudio.volume = 0.5; } catch (e) {}
+bgVideo.muted = bgVideo.muted || false;
+function updateMuteIcon() {
+  muteBtn.textContent = bgVideo.muted ? '🔇' : '🔊';
+}
+muteBtn.addEventListener('click', function() {
+  bgVideo.muted = !bgVideo.muted;
+  bgAudio.muted = !bgAudio.muted;
+  updateMuteIcon();
+});
+const playPromise = bgVideo.play();
+if (playPromise !== undefined) {
+  playPromise.catch(function() {
+    bgVideo.muted = true;
+    updateMuteIcon();
+  });
+}
+updateMuteIcon();
+
+// Slow down myVideo by 10%
+const myVideo = document.getElementById('myVideo');
+if (myVideo) {
+  myVideo.playbackRate = 0.9;
+}
+
+// ===== LUMA KEY CONTROL FUNCTIONS =====
+// Easily adjust video/image coloring with these functions
+window.lumaKeyControl = {
+  setSaturation: function(value) {
+    // value: 0-1 (0 = grayscale, 1 = full color)
+    document.documentElement.style.setProperty('--luma-saturation', value);
+    console.log(`Saturation set to ${value}`);
+  },
+  setHue: function(degrees) {
+    // degrees: 0-360 (hue rotation)
+    document.documentElement.style.setProperty('--luma-hue', degrees);
+    console.log(`Hue rotated by ${degrees}°`);
+  },
+  setBrightness: function(value) {
+    // value: 0.5-2 (1 = normal)
+    document.documentElement.style.setProperty('--luma-brightness', value);
+    console.log(`Brightness set to ${value}`);
+  },
+  setContrast: function(value) {
+    // value: -1 to 1
+    document.documentElement.style.setProperty('--luma-contrast', value);
+    console.log(`Contrast set to ${value}`);
+  },
+  setAll: function(saturation, hue, brightness, contrast) {
+    // Set all properties at once
+    document.documentElement.style.setProperty('--luma-saturation', saturation);
+    document.documentElement.style.setProperty('--luma-hue', hue);
+    document.documentElement.style.setProperty('--luma-brightness', brightness);
+    document.documentElement.style.setProperty('--luma-contrast', contrast);
+    console.log(`Color settings updated: saturation=${saturation}, hue=${hue}°, brightness=${brightness}, contrast=${contrast}`);
+  },
+  reset: function() {
+    // Reset to default
+    this.setAll(0.5, 0, 1.2, 0);
+    console.log('Luma key reset to defaults');
+  },
+  // Preset configurations
+  presets: {
+    vivid: function() { this.setAll(1, 0, 1.4, 0.2); },
+    muted: function() { this.setAll(0.3, 0, 1, -0.2); },
+    highContrast: function() { this.setAll(0.7, 0, 1.5, 0.4); },
+    monochrome: function() { this.setAll(0, 0, 1.2, 0); }
+  }
+};
+
+// Usage examples in console:
+// lumaKeyControl.setSaturation(0.8)
+// lumaKeyControl.setHue(45)
+// lumaKeyControl.setBrightness(1.5)
+// lumaKeyControl.presets.vivid()
+// lumaKeyControl.reset()
+</script>
+</body>
+</html>
