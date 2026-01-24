@@ -486,3 +486,37 @@ position: relative;
   z-index: -1;
 }
 
+@media screen and (max-width: 600px) {
+  .menu-item {
+    font-size: 16px;
+  }
+  .mute-control{
+    font-size: 16px;
+  }
+  .content-container{
+    width: 80%;
+    height:auto;
+    margin-left:5vw;
+    margin-right:10vw;
+  }
+    .content-containerC { 
+         width: 50%;
+         height: auto;
+margin-left:25vw;
+    margin-right:10vw;
+}
+      .content-containerC img { 
+         width: 100%;
+
+} 
+    .content-containerZ p { 
+font-size: 16px;
+}
+
+.superA-text a{
+  font-size: 16px;
+}
+.superA-text a1{
+  font-size: 16px;
+}
+}
