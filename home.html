@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>YUME</title>
-   <link rel="icon" href="./img/lil.jpg" type="image/jpg">
+     <link rel="icon" href="./img/lil.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Background audio track -->
-  <audio autoplay loop id="bgAudio" style="display:none;" volume="0.5">
+  <audio autoplay muted loop id="bgAudio" style="display:none;" volume="0.5">
     <source src="./sound/yumesound.mp3" type="audio/mpeg">
   </audio>
 
@@ -33,7 +33,7 @@
       <button id="mute-btn" class="mute-control" aria-label="Mute/unmute background video">🔊</button>
   </nav>
 
- <video autoplay loop id="myVideo" style="filter:saturate(4) sepia(0.55) hue-rotate(60deg) brightness(0.01) contrast(1.15);-webkit-filter: sepia(.9) hue-rotate(-313deg) saturate(3) brightness(1.5) contrast(.9) blur(0.2px);">
+ <video autoplay muted loop id="myVideo" style="filter:saturate(0) sepia(0.55) hue-rotate(60deg) brightness(2.0) contrast(1.15);-webkit-filter: sepia(.6) hue-rotate(54deg) saturate(9) brightness(1.4) contrast(1) blur(0.2px);">
     <source src="./img/yumelogo1.mp4" type="video/mp4">
   </video>
 
