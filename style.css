@@ -41,7 +41,7 @@ img[src*="yumebg1.png"] {
   justify-content: center;
   background: url('./img/yumebg1.png');
   
-  background-size: 10px 10px;
+  background-size: 20px 20px;
   background-repeat: repeat;
   background-clip: text;
   -webkit-background-clip: text;
@@ -49,7 +49,7 @@ img[src*="yumebg1.png"] {
   font-family: 'Gluten', monospace;
 text-decoration:none;
 text-wrap: nowrap;
-  font-size: .8rem;
+  font-size: 20px;
   font-weight: 1;
   border-right: .1px solid #fff;
     border-image: url(rgba) 300 stretch; filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
@@ -76,7 +76,7 @@ text-wrap: nowrap;
 .menu-item:hover {
   background:('./img/yumebg1.png');
   animation: breathe 350s ease-in-out infinite;
-  background-size: 10px 10px;
+  background-size: 20px 20px;
   background-repeat: repeat;
     background-clip: text;
   -webkit-background-clip: text;
@@ -102,7 +102,7 @@ text-wrap: nowrap;
   justify-content: center;
   background: transparent;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 20px;
   border: none;
   border-left: .1px solid #fff;
     border-image: url('./img/yumebg1.png') 300 stretch;filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
@@ -137,7 +137,7 @@ text-wrap: nowrap;
   position: fixed;
   bottom: 0;
   background: transparent;
-  color: #000000;
+  color: #e5cfac;
   width: 100%;
   padding: 20px;
 }
@@ -145,29 +145,29 @@ text-wrap: nowrap;
 /* Text style categories */
 .body-text {
   font-family: 'Two Cent MT', monospace;
- color: #361e1c;
+ color: #e5cfac;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 20px;
 }
 .titleA-text {
   font-family: 'Gluten', display;
-  color: #361e1c;
+  color: #e5cfac;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 20px;
   text-align: right;
  
 }
 .title-text {
   font-family: 'Gluten', display;
-   color: #361e1c;
+   color: #e5cfac;
   animation: breathe 350s ease-in-out infinite;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 30px;;
   
 }
 .titleB-text {
   font-family: 'Gluten', display;
-   color: #361e1c;
+   color: #e5cfac;
   animation: breathe 350s ease-in-out infinite;
   font-weight: 700;
   font-size: 1.3em;
@@ -178,10 +178,10 @@ text-wrap: nowrap;
   
   font-family: 'Gluten', display;
 
-color: #361e1c;
+color: #e5cfac;
   animation: breathe 350s ease-in-out infinite;
   font-weight: 1000;
-  font-size: 2em;
+  font-size: 20px;
   display: block;
 
 text-align:center
@@ -193,10 +193,10 @@ text-align:center
 .superA-text a {
   
   font-family: 'Gluten', display;
-color: #361e1c;
+color: #e5cfac;
 
   font-weight: 1000;
-  font-size: 1em;
+  font-size: 20px;
 display:inline-flex;
 margin-top: 12px;
 text-align: right;
@@ -207,10 +207,10 @@ text-decoration: none;
 .superA-text a1 {
   
   font-family: 'Gluten', display;
-color: #361e1c;
+color: #e5cfac;
 
   font-weight: 1000;
-  font-size: 1em;
+  font-size: 20px;
 display:inline-flex;
 margin-top: 12px;
 text-align: right;
@@ -231,7 +231,7 @@ color: #a64523;
 
 .super-text {
   font-family: 'Gluten', display;
-  color: #361e1c;
+  color: #e5cfac;
   
   font-weight: 1000;
   font-size: 2em;
@@ -242,9 +242,9 @@ pointer-events: none;
 
 .super-text-small {
   font-family: 'Gluten', display;
-  color: #361e1c;
+color:#e5cfac;
   font-weight: 1000;
-  font-size: 1.2em;
+  font-size: 20px;
   display: inline;
 }
 .content-containerA {
@@ -255,8 +255,8 @@ pointer-events: none;
   margin-left: 5vw;
   margin-right: 5vw;
   width: calc(100% - 10vw);
-  background: url('./img/yumebg1.png');
-color: #361e1c;
+  background: #221a1a;
+color: #e5cfac;
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px;
@@ -265,11 +265,11 @@ color: #361e1c;
   overflow: visible;
   max-height: none;
     font-family: 'Two Cent MT', monospace;
-color: #361e1c;
+color: #e5cfac;
 
   font-weight: 300;
   font-size: .8em;
-  border: .1px solid #fff;
+
     
     
 
@@ -277,14 +277,19 @@ color: #361e1c;
   
 }
 .content-container {
+  justify-content:center;
+  width: 90vw;
+
   z-index: 5990;
   position: relative;
   justify-self: center;
+  align-items: center;
+  justify-items: center;
   margin-left: 5vw;
   margin-right: 5vw;
-  width: calc(100% - 10vw);
- background: url('./img/yumebg1.png');
-color: #361e1c;
+
+ background: #221a1a;
+
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px;
@@ -293,16 +298,56 @@ color: #361e1c;
   overflow: visible;
   max-height: none;
     font-family: 'Two Cent MT', monospace;
-color: #361e1c;
+color:#e5cfac;
 
   font-weight: 300;
-  font-size: .8em;
+  font-size: 20px;
   
-  border: .1px solid #fff;
-    border-image: url('./img/yumebg1.png') 300 stretch; filter: sepia(0.6) hue-rotate(10deg) brightness(1) contrast(1) saturate(1) opacity(90%);
+border:0px;
+border-radius: 20px;
+    
 
   
   
+}
+.content-containerC {
+  display:flex;
+
+  -ms-flex-align: center;
+  justify-content:center;
+ width: 100%;
+
+align-self:center;
+
+  z-index: 5990;
+  position: relative;
+  justify-self: center;
+  align-items: center;
+  justify-items: center;
+
+
+
+color: #e5cfac;
+ 
+  padding-bottom: 20px;
+  padding-top:20px;
+  z-index: 50;
+  overflow: visible;
+  max-height: none;
+    font-family: 'Two Cent MT', monospace;
+color: #e5cfac;
+
+  font-weight: 300;
+  font-size: 20px;
+
+  
+  
+}
+.content-containerC img{
+  border-radius: 20px;
+    border: 10px solid #000;
+
+
 }
 .content-containerZ {
 
@@ -317,36 +362,39 @@ background: url('./img/yumebg1.png');
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px;
-
+padding-top: 10px;
   z-index: 50;
   overflow: visible;
 height: auto;
     font-family: 'Two Cent MT', monospace;
-  color: #fff;
+
 width:auto;
   font-weight: 300;
-  font-size: .8em;
-  border: .1px solid #fff;
-border-image: url('./img/yumebg1.png') 300 stretch; filter: sepia(0.6) hue-rotate(10deg) brightness(1) contrast(1) saturate(1) opacity(90%);
-    
-  
+  font-size: 20px;
+  border:0px;
+  border-radius: 20px;
+  background: #221a1a
   
 }
 .content-container::after {
   content: "";
   display: table;
   clear: both;
+  
 }
 .content-container img{
-  float: left;
-width: 50%;
+  display: flex;
+ position:relative;
+ align-content: center;
+ justify-content:center;
+width:100%;
   height: auto;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  border: 2px solid;
- background: url('./img/yumebg1.png');
+
+
+
+
   
-  position: relative;
+
 }
 .content-container img::before {
   content: '';
@@ -359,15 +407,26 @@ width: 50%;
   background-size: 20px 20px;
   animation: breathe 4s ease-in-out infinite;
   z-index: -1;
+  
 }
 
 .content-container a{
   font-family: 'Two Cent MT', monospace;
   font-weight: 0;
   margin-top: 0;
-  color:rgb(0, 0, 0);
+ color: #e5cfac;
   transition: letter-spacing 0.18s;
   text-decoration:none;
+  font-size: 20px;
+}
+.content-container a1{
+  font-family: 'Two Cent MT', monospace;
+  font-weight: 0;
+  margin-top: 0;
+ color: #e5cfac;
+  transition: letter-spacing 0.18s;
+  text-decoration:none;
+  font-size: 20px;
 }
 .content-container a:hover{
   font-family: 'Two Cent MT', monospace;
@@ -379,7 +438,7 @@ width: 50%;
   
  background-image: url('./img/yumebg1.png');
  
-  background-size: 10px 10px;
+  background-size: 20px 20px;
   background-repeat: repeat;
     background-clip: text;
   -webkit-background-clip: text;
@@ -391,11 +450,14 @@ width: 50%;
   font-family: 'Two Cent MT', monospace;
   font-weight: 200;
   margin-top: 0;
-  color:rgb(0, 0, 0);
+ color: #e5cfac;
   font-weight: 800;
   transition: letter-spacing 0.18s;
   text-decoration:none;
 pointer-events: none;
+}
+.content-container a:hover{
+ color:#ffffff;
 }
 
 
