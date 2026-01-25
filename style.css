@@ -15,7 +15,9 @@ img[src*="yumebg1.png"] {
   filter: saturate(0) sepia(0.6) hu2e-rotate(0deg) brightness(0.4) contrast(4);
   -webkit-filter: saturate(0) sepia(0.4) hue-rotate(0deg) brightness(.36) contrast(2);
 }
-
+.instagram-media{
+  padding:0px 0px 0px 0px !important;
+}
 /* Stretchy menu bar at top */
 .menu-bar {
   position: fixed;
@@ -111,9 +113,10 @@ padding:10px;
 /* Responsive full-screen video with luma-key filter */
 #myVideo {
   position: fixed;
-  top: 0;
+  top: -30%;
   left: 0;
   width: 100%;
+
   height: auto;
   z-index: 1;
   object-fit: cover;
@@ -329,7 +332,43 @@ color: #e5cfac;
   padding-top:20px;
   z-index: 50;
   overflow: visible;
-  max-height: none;
+
+    font-family: 'Two Cent MT', monospace;
+color: #e5cfac;
+
+  font-weight: 300;
+  font-size: 20px;
+
+  
+  
+}
+.content-containerD {
+  background-color: white;
+  display:flex;
+border:10px solid #000;
+border-radius: 20px;
+  -ms-flex-align: center;
+  justify-content:center;
+ width: auto;
+ height: auto;
+
+
+align-self:center;
+
+  z-index: 5990;
+  position: relative;
+  justify-self: center;
+  align-items: center;
+  justify-items: center;
+
+
+
+color: #e5cfac;
+ 
+padding:0px 0px 0px 0px;
+  z-index: 50;
+
+
     font-family: 'Two Cent MT', monospace;
 color: #e5cfac;
 
@@ -342,7 +381,7 @@ color: #e5cfac;
 .content-containerC img{
   border-radius: 20px;
     border: 10px solid #000;
-
+width: 30%;
 
 }
 .content-containerZ {
@@ -502,7 +541,7 @@ position: relative;
 
 }
       .content-containerC img { 
-         width: 100%;
+         width: 50%;
          margin:0px;
 
 
@@ -526,6 +565,11 @@ text-wrap:wrap;
 }
 .buffer-c {
   height: 50vh;   
+}
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 }
 
