@@ -2,10 +2,10 @@
 
 /* Import web fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300;400;700;900&display=swap');
-
+@import url('https://fonts.cdnfonts.com/css/tw-cen-mt');
 @font-face {
-  font-family: 'Two Cent MT';
-  src: local('Two Cent MT'), local('TwoCentMT');
+  font-family: 'Tw Cen MT';
+  src: local('Tw Cen MT'), local('TwoCentMT');
   font-weight: normal;
   font-style: normal;
 }
@@ -47,18 +47,36 @@ img[src*="yumebg1.png"] {
   right: 20px;
   display: flex;
   height: 47px;
-  background: rgba(0, 0, 0, 0.2);
+  width:92%;
+  background: rgba(34, 26, 26, 0.2);
   border: 0px solid #fff;
-border-radius: 20px;
-    border-image: url('./img/yumebg1.png') 300 stretch; filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
-
+  border-radius: 20px;
+  border-image: url('./img/yumebg1.png') 300 stretch;
   padding: 0;
-  z-index: 0;
+  z-index: 1000;
   gap: 0;
+  color: #95AD67;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+.menu-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(34, 26, 26, 0.2);
+  border-radius: 20px;
+  filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
+  -webkit-filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
+  z-index: -1;
+  pointer-events: none;
 }
 h4 {
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
   font-weight: 1000;
   font-size: 30px;;
@@ -66,10 +84,10 @@ h4 {
 }
 h1 {
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
   font-weight: 1000;
   font-size: 30px;;
@@ -77,7 +95,7 @@ h1 {
 }
 h2 {
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
   font-weight: 1000;
   font-size: 30px;;
@@ -85,7 +103,7 @@ h2 {
 }
 h3 {
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
   font-weight: 1000;
   font-size: 30px;;
@@ -117,55 +135,54 @@ i {
 }
 .menu-item {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url('./img/yumebg1.png');
   
-  background-size: 20px 20px;
-  background-repeat: repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-family: 'Gluten', monospace;
-text-decoration:none;
-text-wrap: nowrap;
+  display: flex;
+  margin-top: 0px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+color: rgba(56,30,28, 1);
+  font-family: 'Gluten';
+  text-decoration: none;
+  text-wrap: nowrap;
   font-size: 20px;
   font-weight: 1;
-  border-right: .1px solid #fff;
-    border-image: url(rgba) 300 stretch; filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
-  animation: breathe 350s ease-in-out infinite;
-padding:10px;
-z-index: 500;
-  transition: background 0.3s, letter-spacing 0.18s;
+  border-right: 0.1px solid rgba(56,30,28,1);
+  padding-left: 8vw;
 
+  padding-right: 8vw;
+  z-index: 1;
+  transition: background 0.3s, letter-spacing 0.18s, color 0.18s;
+  -webkit-appearance: none;
 }
-@keyframes breathe {
-  0% { background-position: 0 0; }
-  50% { background-position: 100px 100px; }
-  100% { background-position: 0 0; }
+.menu-item:first-child {
+border-bottom-left-radius: 20px;
+border-top-left-radius: 20px;
 }
-
 .menu-item:last-child {
-  border-right: none;
-    border-image: url('./img/yumebg1.png') 300 stretch; filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
-    
-      animation: breathe 350s ease-in-out infinite;
+  border-right: none !important;
+  border-left:none;
+padding: 0px 0vw 0px 0vw;
+border-bottom-right-radius: 20px;
+border-top-right-radius: 20px;
 }
 
 /* Menu item hover and active effects */
 .menu-item:hover {
- 
-  animation: breathe 350s ease-in-out infinite;
-font-weight:bold;
+  letter-spacing: 0.1em;
+   background: rgb(255,255,237, 0.5);
 
-  letter-spacing: .1em;
-  transition: letter-spacing 0.18s, color .18s;
+  transition: letter-spacing 0.3s, color 0.3s;
+}
+.menu-item a {
+ color: rgba(56,30,28, 1)!important;
 
+  text-decoration: none;
+  display: inherit;
 }
 .menu-item a:hover {
-  color:#a64523;
-  transition: color .18s;
+
+color: rgba(255,255,237, 1) !important;
 }
 a:hover {
   color:#a64523;
@@ -180,15 +197,18 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: #fff;
+  color: rgba(56,30,28, 1);
   font-size: 20px;
   border: none;
-  border-left: .1px solid #fff;
-    border-image: url('./img/yumebg1.png') 300 stretch;filter: sepia(0.6) hue-rotate(50deg) brightness(1) contrast(1) saturate(1);
-    
+
+  
   cursor: pointer;
   transition: background 0.2s;
   outline: none;
+}
+
+.mute-control:hover {
+  background: rgba(255, 255, 237, 0.1);
 }
 
 
@@ -218,40 +238,40 @@ a:hover {
   position: fixed;
   bottom: 0;
   background: transparent;
-  color: #e5cfac;
+  color: #FFFBED;
   width: 100%;
   padding: 20px;
 }
 
 /* Text style categories */
 .body-text {
-  font-family: 'Two Cent MT', monospace;
- color: #e5cfac;
+  font-family: 'Tw Cen MT' !important;
+ color: #FFFBED;
   font-weight: 300;
   font-size: 20px;
   line-height:25px;
 }
 .titleA-text {
   font-family: 'Gluten', display;
-  color: #e5cfac;
-  font-weight: 700;
+  color: #95AD67;
+  font-weight: 100;
   font-size: 20px;
   text-align: right;
  
 }
 .title-text {
   font-family: 'Gluten', display;
-   color: #e5cfac;
+  color: #95AD67;
   animation: breathe 350s ease-in-out infinite;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 30px;;
   
 }
 .titleB-text {
   font-family: 'Gluten', display;
-   color: #e5cfac;
+   color: #FFFBED;
   animation: breathe 350s ease-in-out infinite;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.3em;
   text-align: right;
   
@@ -260,9 +280,9 @@ a:hover {
   
   font-family: 'Gluten', display;
 
-color: #e5cfac;
+color: #FFFBED;
   animation: breathe 350s ease-in-out infinite;
-  font-weight: 1000;
+  font-weight: 400;
   font-size: 20px;
   display: block;
 
@@ -274,9 +294,9 @@ text-align:center
 a{
 
   font-family: 'Gluten', display;
-color: #e5cfac;
+color: #95AD67;
 
-  font-weight: 1000;
+  font-weight: 400;
   font-size: 20px;
 display:inline-flex;
 margin-top: 12px;
@@ -287,9 +307,9 @@ text-decoration: none;
 .superA-text a {
   
   font-family: 'Gluten', display;
-color: #e5cfac;
+color: #FFFBED;
 
-  font-weight: 1000;
+  font-weight: 400;
   font-size: 20px;
 display:inline-flex;
 margin-top: 12px;
@@ -301,9 +321,9 @@ text-decoration: none;
 .superA-text a1 {
   
   font-family: 'Gluten', display;
-color: #e5cfac;
+color: #FFFBED;
 
-  font-weight: 1000;
+  font-weight: 400;
   font-size: 20px;
 display:inline-flex;
 margin-top: 12px;
@@ -317,7 +337,7 @@ text-align: right;
 
 
 
-color: #a64523;
+  color: #95AD67;
 
   transition: background 0.3s, letter-spacing 0.18s;
 
@@ -325,9 +345,9 @@ color: #a64523;
 
 .super-text {
   font-family: 'Gluten', display;
-  color: #e5cfac;
+  color: #FFFBED;
   
-  font-weight: 1000;
+  font-weight: 400;
   font-size: 30px;;
   display: inline;
 pointer-events: none;
@@ -336,8 +356,9 @@ pointer-events: none;
 
 .super-text-small {
   font-family: 'Gluten', display;
-color:#e5cfac;
-  font-weight: 1000;
+color:#FFFBED;
+  font-weight: 400
+;
   font-size: 20px;
   display: inline;
 }
@@ -350,7 +371,7 @@ color:#e5cfac;
   margin-right: 5vw;
   width: 100%;
   background: #221a1a;
-color: #e5cfac;
+color: #FFFBED;
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px;
@@ -358,8 +379,8 @@ color: #e5cfac;
   z-index: 50;
   overflow: visible;
   max-height: none;
-    font-family: 'Two Cent MT', monospace;
-color: #e5cfac;
+    font-family: 'Tw Cen MT';
+color: #FFFBED;
 
   font-weight: 300;
   font-size: .8em;
@@ -391,8 +412,8 @@ color: #e5cfac;
   z-index: 50;
   overflow: visible;
 height:auto;
-    font-family: 'Two Cent MT', monospace;
-color:#e5cfac;
+    font-family: 'Tw Cen MT';
+color:#FFFBED;
 
   font-weight: 300;
   font-size: 20px;
@@ -424,15 +445,15 @@ align-self:center;
 
 
 
-color: #e5cfac;
+color: #FFFBED;
  
   padding-bottom: 20px;
   padding-top:20px;
   z-index: 50;
   overflow: visible;
 
-    font-family: 'Two Cent MT', monospace;
-color: #e5cfac;
+    font-family: 'Tw Cen MT';
+color: #FFFBED;
 
   font-weight: 300;
   font-size: 20px;
@@ -462,14 +483,14 @@ align-self:center;
 
 
 
-color: #e5cfac;
+color: #FFFBED;
  
 padding:0px 0px 0px 0px;
   z-index: 50;
 
 
-    font-family: 'Two Cent MT', monospace;
-color: #e5cfac;
+    font-family: 'Tw Cen MT';
+color: #FFFBED;
 
   font-weight: 300;
   font-size: 20px;
@@ -500,7 +521,7 @@ padding-top: 10px;
   z-index: 50;
  
 height: auto;
-    font-family: 'Two Cent MT', monospace;
+    font-family: 'Tw Cen MT';
 
 width:100%;
   font-weight: 300;
@@ -523,7 +544,7 @@ width:100%;
  justify-content:center;
 width:50%;
   height: auto;
-  border: dashed 2px #e5cfac;
+  border: dashed 2px #FFFBED;
 
 
 
@@ -546,25 +567,25 @@ width:50%;
 }
 
 .content-container a{
-  font-family: 'Two Cent MT', monospace;
+  font-family: 'Tw Cen MT';
   font-weight: 0;
   margin-top: 0;
- color: #e5cfac;
+ color: #FFFBED;
   transition: letter-spacing 0.18s;
   text-decoration:none;
   font-size: 20px;
 }
 .content-container a1{
-  font-family: 'Two Cent MT', monospace;
+  font-family: 'Tw Cen MT';
   font-weight: 0;
   margin-top: 0;
- color: #e5cfac;
+ color: #FFFBED;
   transition: letter-spacing 0.18s;
   text-decoration:none;
   font-size: 20px;
 }
 .content-container a:hover{
-  font-family: 'Two Cent MT', monospace;
+  font-family: 'Tw Cen MT';
   font-weight: 200;
   margin-top: 0;
   color:#a64523;
@@ -582,10 +603,10 @@ width:50%;
 
 }
 .content-container a1{
-  font-family: 'Two Cent MT', monospace;
+  font-family: 'Tw Cen MT';
   font-weight: 200;
   margin-top: 0;
- color: #e5cfac;
+ color: #FFFBED;
   font-weight: 800;
   transition: letter-spacing 0.18s;
   text-decoration:none;
