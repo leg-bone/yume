@@ -6,6 +6,8 @@
   <title>YUME</title>
      <link rel="icon" href="./img/lil.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
 </head>
 <body>
 
@@ -41,7 +43,28 @@
 <div class="bumper"></div>
 <div class="bumper"></div>
 
+<div class="container0">
 
+<model-viewer src="./models/me.glb" ar ar-modes="webxr scene-viewer quick-look fallback"
+disable-zoom camera-controls auto-rotate poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1" camera-controls auto-rotate poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1"
+camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m 0m 0m">
+</model-viewer>
+
+
+
+
+
+
+
+<model-viewer src="./models/yu.glb" ar ar-modes="webxr scene-viewer quick-look fallback"
+disable-zoom camera-controls auto-rotate poster="./img/poster01.png" shadow-intensity="0" shadow-softness="1"
+camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m 0m 0m">
+</model-viewer>
+
+</div>
+
+<div class="bumper"></div>
+<div class="bumper"></div>
 </div>
   <div class="content-container">
       <p class="title-text">
@@ -68,8 +91,25 @@ curious people that happen to walk by.
 
 </div>
 
-<div class="bumper"></div>
+<div class="bumper">
+  
+</div>
 
+<div class="container">
+
+<model-viewer class ="model-viewerA" src="./models/yume.glb" ar ar-modes="webxr scene-viewer fallback"
+disable-zoom camera-controls auto-rotate poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1" camera-controls poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1"
+camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m 0m 0m">
+</model-viewer>
+</div>
+
+  <div class="bumper">
+
+</div>
+
+<div class="bumper">
+  
+</div>
  <div class="content-containerC">
   <img src="./img/logo.jpg" alt="YUME COWORKING SPACE">
 </div>
