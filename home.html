@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>YUME</title>
-     <link rel="icon" href="./img/lil.png" type="image/png">
+    <link rel="icon" href="./img/lil.jpg" type="image/jpeg">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
 
@@ -17,7 +17,7 @@
   </audio>
 
   <!-- Background video with sound, behind everything -->
-  <video autoplay muted loop id="bgVideo" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-999;object-fit:cover;pointer-events:none;filter: sepia(0.2) hue-rotate(0deg) brightness(1.3) contrast(1.2) saturate(1);-webkit-filter: contrast(1.7) sepia(0.2)saturate(.8);">
+  <video autoplay muted loop id="bgVideo" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-999;object-fit:cover;pointer-events:none;filter: sepia(0.2) hue-rotate(0deg) brightness(1.3) contrast(1.2) saturate(1);-webkit-filter: contrast(1.7) sepia(0.2) saturate(.8);">
     <source src="./img/yumebg1.mp4" type="video/mp4">
   </video>
 
@@ -37,12 +37,26 @@
     <source src="./img/yumelogo1.mp4" type="video/mp4">
   </video>
   -->
+  <div class="bumper"></div>
+<div class="bumper"></div>
 <div class="everything">
-
+ <div class="content-containerC">
+  <img src="./img/logo.jpg" alt="YUME COWORKING SPACE">
+</div>
 
 <div class="bumper"></div>
 <div class="bumper"></div>
-
+ <div class="content-container">
+      <p class="title-text">
+        MEET YUME:
+      </p>
+      <p class="body-text">
+[desc]
+</p>
+  
+  </div>
+  <div class="bumper"></div>
+<div class="bumper"></div>
 <div class="container0">
 
 <model-viewer src="./models/me.glb" ar ar-modes="webxr scene-viewer quick-look fallback"
@@ -65,10 +79,13 @@ camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m
 
 <div class="bumper"></div>
 <div class="bumper"></div>
-</div>
-  <div class="content-container">
+
+
+ 
+
+<div class="content-container">
       <p class="title-text">
-        MEET YUME:
+        ABOUT THE SPACE:
       </p>
       <p class="body-text">
       Yume is an approximately 1300 square foot
@@ -87,10 +104,6 @@ curious people that happen to walk by.
 </p>
   
   </div>
-  <div class="bumper">
-
-</div>
-
 <div class="bumper">
   
 </div>
@@ -98,8 +111,8 @@ curious people that happen to walk by.
 <div class="container">
 
 <model-viewer class ="model-viewerA" src="./models/yume.glb" ar ar-modes="webxr scene-viewer fallback"
-disable-zoom camera-controls auto-rotate poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1" camera-controls poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1"
-camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m 0m 0m">
+ camera-controls auto-rotate poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1" camera-controls poster="./img/poster04.png" shadow-intensity="0" shadow-softness="1"
+camera-orbit="-90deg 90deg 100m" field-of-view="30deg" camera-target="4.929e-9m 10m 30m" >
 </model-viewer>
 </div>
 
@@ -110,9 +123,7 @@ camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m
 <div class="bumper">
   
 </div>
- <div class="content-containerC">
-  <img src="./img/logo.jpg" alt="YUME COWORKING SPACE">
-</div>
+
 </div>
 </div>
 

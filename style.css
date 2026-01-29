@@ -38,18 +38,22 @@ img[src*="yumebg1.png"] {
 .model-viewer {
   
       width: 100vw;
-      height: 30vh;
+      height: 20vh;
       display: inline-table;
       justify-content: center;
       margin:0;
     }
     .model-viewerA {
   
-      width: 100vw;
+      width: 75vw;
       height: 60vh;
       display: inline-table;
       justify-content: center;
-      margin:0;
+      margin:0px;
+      background: rgba(255, 255, 255, .5);
+      border: solid 10px #221a1a;
+      border-radius: 20px;
+      padding: 0px;
     }
 
 
@@ -71,6 +75,9 @@ img[src*="yumebg1.png"] {
       justify-content:center;
       align-items: center;
       display: flex;
+      background: rgba(255, 255, 255, .5);
+      border: solid 10px #221a1a;
+      border-radius: 20px;
     }
 .container{
   width:100vw;
@@ -92,7 +99,7 @@ img[src*="yumebg1.png"] {
   display: flex;
   height: 47px;
   width:92%;
-  background: rgba(34, 26, 26, 0.9);
+  background: rgba(149,173,103, 0.9);
   border: 0px solid #fff;
   border-radius: 20px;
   border-image: url('./img/yumebg1.png') 300 stretch;
@@ -301,7 +308,7 @@ a:hover {
 }
 .titleA-text {
   font-family: 'Gluten', display;
-  color: #FFFBED;
+  color: #381E1C;
   
   font-weight: 100;
   font-size: 20px;
@@ -310,7 +317,7 @@ a:hover {
 }
 .title-text {
   font-family: 'Gluten', display;
-  color: #FFFBED;
+  color: #381E1C;
   animation: breathe 350s ease-in-out infinite;
   font-weight: 400;
   font-size: 30px;;
@@ -326,6 +333,20 @@ a:hover {
   
 }
 .superA-text {
+  
+  font-family: 'Gluten', display;
+
+color: #381E1C;
+  animation: breathe 350s ease-in-out infinite;
+  font-weight: 400;
+  font-size: 20px;
+  display: block;
+
+text-align:center
+
+
+}
+.superB-text {
   
   font-family: 'Gluten', display;
 
@@ -366,6 +387,19 @@ text-align: right;
 text-decoration: none;
 
 }
+.superB-text a {
+  
+  font-family: 'Gluten', display;
+color: #FFFBED;
+
+  font-weight: 400;
+  font-size: 20px;
+display:inline-flex;
+margin-top: 12px;
+text-align: right;
+text-decoration: none;
+
+}
 
 .superA-text a1 {
   
@@ -380,8 +414,32 @@ text-align: right;
 
 
 }
+.superB-text a1 {
+  
+  font-family: 'Gluten', display;
+color: #FFFBED;
+
+  font-weight: 400;
+  font-size: 20px;
+display:inline-flex;
+margin-top: 12px;
+text-align: right;
+
+
+}
+
 
 .superA-text a:hover {
+  
+
+
+
+  color: #95AD67;
+
+  transition: background 0.3s, letter-spacing 0.18s;
+
+}
+.superB-text a:hover {
   
 
 
@@ -394,7 +452,7 @@ text-align: right;
 
 .super-text {
   font-family: 'Gluten', display;
-color:#FFFBED;
+color:#381E1C;
   
   font-weight: 400;
   font-size: 30px;;
@@ -452,7 +510,7 @@ color: #FFFBED;
   margin-left: 5vw;
   margin-right: 5vw;
 
- background: #221a1a;
+ background: #95AD67;
 
   padding-left: 20px;
   padding-right:20px;
@@ -593,8 +651,8 @@ width:100%;
  justify-content:center;
 width:50%;
   height: auto;
-  border: dashed 2px #FFFBED;
-
+  border: solid 2px #381E1C;
+border-radius:20px;
 
 
 
@@ -728,6 +786,12 @@ text-wrap:wrap;
 
 .superA-text a{
   font-size: 16px;
+}
+.superB-text a{
+  font-size: 16px;
+}
+.superB-text a1{
+  font-size: 14px;
 }
 .superA-text a1{
   font-size: 14px;
