@@ -26,7 +26,7 @@
     
     <a href="work.html" class="menu-item">WORK</a>
 
-    <a href="contact.html" class="menu-item">CONTACT</a>
+    <a href="contact.html" class="menu-item">GET INVOLVED</a>
 <nav class="menu-item">
       <button id="mute-btn" class="mute-control" aria-label="Mute/unmute background video">🔊</button>
  </nav>
@@ -102,6 +102,38 @@ if (playPromise !== undefined) {
   });
 }
 updateMuteIcon();
+
+const defaultClickSfx = new Audio('./sound/bohnk.wav');
+const linkClickSfx = new Audio('./sound/bonk.wav');
+defaultClickSfx.preload = 'auto';
+linkClickSfx.preload = 'auto';
+defaultClickSfx.volume = 0.025;
+linkClickSfx.volume = 0.025;
+
+function playClickSfx(audio) {
+  audio.currentTime = 0;
+  audio.play().catch(function() {});
+}
+
+document.addEventListener('click', function(e) {
+  const clickedLink = e.target.closest('a[href]');
+  if (clickedLink) {
+    playClickSfx(linkClickSfx);
+    const hasModifier = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+    const isPrimaryClick = e.button === 0;
+    const opensNewTab = clickedLink.target === '_blank' || hasModifier || !isPrimaryClick;
+    const hrefValue = clickedLink.getAttribute('href') || '';
+    const shouldDelayNav = hrefValue && !hrefValue.startsWith('#') && !hrefValue.startsWith('javascript:') && !opensNewTab;
+    if (shouldDelayNav) {
+      e.preventDefault();
+      setTimeout(function() {
+        window.location.href = clickedLink.href;
+      }, 50);
+    }
+    return;
+  }
+  playClickSfx(defaultClickSfx);
+});
 
 // Slow down myVideo by 10%
 const myVideo = document.getElementById('myVideo');

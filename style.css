@@ -282,7 +282,7 @@ a:hover {
   filter: brightness(1) contrast(1);
   -webkit-filter: brightness(1) contrast(1);
   mix-blend-mode: screen;
-  opacity: 0.7;  mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);  -webkit-mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); 
+  opacity: 0.12;  mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);  -webkit-mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); 
 }
 
 #bgVideo {

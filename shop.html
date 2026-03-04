@@ -332,6 +332,41 @@ camera-orbit="370deg 90deg 1000m" field-of-view="30deg" camera-target="4.929e-9m
 </div>
 
 
+<script>
+const defaultClickSfx = new Audio('./sound/bohnk.wav');
+const linkClickSfx = new Audio('./sound/bonk.wav');
+defaultClickSfx.preload = 'auto';
+linkClickSfx.preload = 'auto';
+defaultClickSfx.volume = 0.025;
+linkClickSfx.volume = 0.025;
+
+function playClickSfx(audio) {
+  audio.currentTime = 0;
+  audio.play().catch(function() {});
+}
+
+document.addEventListener('click', function(e) {
+  const clickedLink = e.target.closest('a[href]');
+  if (clickedLink) {
+    playClickSfx(linkClickSfx);
+    const hasModifier = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+    const isPrimaryClick = e.button === 0;
+    const opensNewTab = clickedLink.target === '_blank' || hasModifier || !isPrimaryClick;
+    const hrefValue = clickedLink.getAttribute('href') || '';
+    const shouldDelayNav = hrefValue && !hrefValue.startsWith('#') && !hrefValue.startsWith('javascript:') && !opensNewTab;
+    if (shouldDelayNav) {
+      e.preventDefault();
+      setTimeout(function() {
+        window.location.href = clickedLink.href;
+      }, 50);
+    }
+    return;
+  }
+  playClickSfx(defaultClickSfx);
+});
+</script>
+
+
 
 
   </body>

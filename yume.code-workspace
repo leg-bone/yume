@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "yume",
+			"path": "."
+		},
+		{
+			"name": "models",
+			"path": "../../../../Downloads/models"
+		}
+	],
+	"settings": {
+		"CodeGPT.apiKey": "DeepSeek",
+		"liveServer.settings.multiRootWorkspaceName": "yume"
+	}
+}
