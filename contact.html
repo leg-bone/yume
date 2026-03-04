@@ -118,10 +118,13 @@ updateMuteIcon();
 
 const defaultClickSfx = new Audio('./sound/bohnk.wav');
 const linkClickSfx = new Audio('./sound/bonk.wav');
+const hoverSfx = new Audio('./sound/woop.wav');
 defaultClickSfx.preload = 'auto';
 linkClickSfx.preload = 'auto';
+hoverSfx.preload = 'auto';
 defaultClickSfx.volume = 0.025;
 linkClickSfx.volume = 0.025;
+hoverSfx.volume = 0.00375;
 
 function playClickSfx(audio) {
   audio.currentTime = 0;
@@ -146,6 +149,17 @@ document.addEventListener('click', function(e) {
     return;
   }
   playClickSfx(defaultClickSfx);
+});
+
+document.addEventListener('mouseover', function(e) {
+  const hoveredLink = e.target.closest('a[href]');
+  if (!hoveredLink) {
+    return;
+  }
+  if (e.relatedTarget && hoveredLink.contains(e.relatedTarget)) {
+    return;
+  }
+  playClickSfx(hoverSfx);
 });
 
 // Slow down myVideo by 10%

@@ -66,7 +66,7 @@
         MEET YUME:
       </p>
       <p class="body-text">
-[desc]
+Yume is a community center for the arts. We're here to serve the people and satisfy our local community's creative needs, first and foremost. Our multi-purpose space is a place for folks of all ages to gather and express themselves through the arts. </p>We are very happy offer you a growing range of resources, such as: . . .</p>- Our makerspace & woodshop, where you can fabricate your dream projects with expert guidance</p>- Our storefront, where local artists sell their beautiful work on consignment </p>- Our sound system, through which beautiful sounds can be broadcast</p>- Our projector, from which powerful films can be screened</p>- Our classroom tables, where you can attend as a student or host as a teacher </p>
 </p>
   
   </div>
@@ -184,10 +184,13 @@ updateMuteIcon();
 
 const defaultClickSfx = new Audio('./sound/bohnk.wav');
 const linkClickSfx = new Audio('./sound/bonk.wav');
+const hoverSfx = new Audio('./sound/woop.wav');
 defaultClickSfx.preload = 'auto';
 linkClickSfx.preload = 'auto';
+hoverSfx.preload = 'auto';
 defaultClickSfx.volume = 0.025;
 linkClickSfx.volume = 0.025;
+hoverSfx.volume = 0.00375;
 
 function playClickSfx(audio) {
   audio.currentTime = 0;
@@ -212,6 +215,17 @@ document.addEventListener('click', function(e) {
     return;
   }
   playClickSfx(defaultClickSfx);
+});
+
+document.addEventListener('mouseover', function(e) {
+  const hoveredLink = e.target.closest('a[href]');
+  if (!hoveredLink) {
+    return;
+  }
+  if (e.relatedTarget && hoveredLink.contains(e.relatedTarget)) {
+    return;
+  }
+  playClickSfx(hoverSfx);
 });
 
 // Slow down myVideo by 10%

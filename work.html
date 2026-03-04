@@ -10,7 +10,7 @@
 <body>
 
   <!-- Background audio track -->
-  <audio autoplay muted loop id="bgAudio" style="display:none;" volume="0.5">
+  <audio autoplay muted loop id="bgAudio" style="display:none;" volume="0.19">
     <source src="./sound/yumesound.mp3" type="audio/mpeg">
   </audio>
 
@@ -105,10 +105,13 @@ updateMuteIcon();
 
 const defaultClickSfx = new Audio('./sound/bohnk.wav');
 const linkClickSfx = new Audio('./sound/bonk.wav');
+const hoverSfx = new Audio('./sound/woop.wav');
 defaultClickSfx.preload = 'auto';
 linkClickSfx.preload = 'auto';
-defaultClickSfx.volume = 0.025;
-linkClickSfx.volume = 0.025;
+hoverSfx.preload = 'auto';
+defaultClickSfx.volume = 0.05;
+linkClickSfx.volume = 0.05;
+hoverSfx.volume = 0.05;
 
 function playClickSfx(audio) {
   audio.currentTime = 0;
@@ -133,6 +136,17 @@ document.addEventListener('click', function(e) {
     return;
   }
   playClickSfx(defaultClickSfx);
+});
+
+document.addEventListener('mouseover', function(e) {
+  const hoveredLink = e.target.closest('a[href]');
+  if (!hoveredLink) {
+    return;
+  }
+  if (e.relatedTarget && hoveredLink.contains(e.relatedTarget)) {
+    return;
+  }
+  playClickSfx(hoverSfx);
 });
 
 // Slow down myVideo by 10%
